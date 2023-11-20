@@ -62,7 +62,7 @@ public class WelcomePanel extends ViewPanel {
         JButton newGameButton = new JButton("New Game");
         newGameButton.setSize(BUTTON_WIDTH, BUTTON_HEIGHT);
         newGameButton.setBackground(Color.BLACK);
-        newGameButton.setForeground(Color.GREEN);
+        newGameButton.setForeground(Color.BLACK);
         newGameButton.setActionCommand("newgame");
         newGameButton.addActionListener(listener);
         newGameButton.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -73,7 +73,7 @@ public class WelcomePanel extends ViewPanel {
         JButton highScoreButton = new JButton("High Scores");
         highScoreButton.setSize(BUTTON_WIDTH, BUTTON_HEIGHT);
         highScoreButton.setBackground(Color.BLACK);
-        highScoreButton.setForeground(Color.GREEN);
+        highScoreButton.setForeground(Color.BLACK);
         highScoreButton.setActionCommand("highscores");
         highScoreButton.addActionListener(listener);
         highScoreButton.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -84,7 +84,7 @@ public class WelcomePanel extends ViewPanel {
         JButton quitButton = new JButton("Quit");
         quitButton.setSize(BUTTON_WIDTH, BUTTON_HEIGHT);
         quitButton.setBackground(Color.BLACK);
-        quitButton.setForeground(Color.GREEN);
+        quitButton.setForeground(Color.BLACK);
         quitButton.setActionCommand("quit");
         quitButton.addActionListener(listener);
         quitButton.setAlignmentX(Component.CENTER_ALIGNMENT);

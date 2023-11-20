@@ -72,7 +72,7 @@ public class HighScoresPanel extends ViewPanel {
 
         JButton backButton = new JButton("Back");
         backButton.setBackground(Color.BLACK);
-        backButton.setForeground(Color.GREEN);
+        backButton.setForeground(Color.BLACK);
         backButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         add(backButton);
         backButton.setActionCommand("welcome");

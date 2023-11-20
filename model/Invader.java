@@ -29,7 +29,7 @@ public class Invader extends GameObject {
 
 
     /** The probability of firing at each clock tick. */
-    protected static final float FIRE_PROBABILITY = .001f;
+    protected static final float FIRE_PROBABILITY = .002f;
 
     /** The value to the player of killing this invader. */
     protected int killWorth;

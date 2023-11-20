@@ -112,13 +112,13 @@ public class Controller implements KeyListener, ActionListener, GameObserver {
      */
     public void keyReleased(KeyEvent e) {
         switch (e.getKeyCode()) {
-            case (KeyEvent.VK_LEFT):
+            case (KeyEvent.VK_LEFT), (KeyEvent.VK_D):
                 gameControl.getPlayer().moveLeft();
                 break;
-            case (KeyEvent.VK_RIGHT):
+            case (KeyEvent.VK_RIGHT), (KeyEvent.VK_A):
                 gameControl.getPlayer().moveRight();
                 break;
-            case (KeyEvent.VK_SPACE):
+            case (KeyEvent.VK_SPACE), (KeyEvent.VK_L):
                 gameControl.getPlayer().fire();
                 break;
             case (KeyEvent.VK_ESCAPE):
