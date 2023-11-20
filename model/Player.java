@@ -13,6 +13,12 @@
 
 package model;
 
+
+import javax.swing.Timer;
+import java.awt.event.ActionListener;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  * The player in the space invaders game.
  */
@@ -38,6 +44,12 @@ public class Player extends GameObject {
     /** How frequently (in terms of ticks) the player is to change image. */
     public static final int CHANGE_FREQ = 0;
 
+    /** A boolean attribute in Player to indicate whether the laser is recharging. */
+    public static boolean isRecharging = false;
+
+    /** A Timer object (java.swing.Timer) for the recharge delay */
+    public static Timer timer;
+
     /**
      * Initialize the player.
      */
@@ -47,6 +59,8 @@ public class Player extends GameObject {
         height = HEIGHT;
         lives = INITIAL_NUM_LIVES;
         score = 0;
+        ActionListener rechargeLaser = e -> isRecharging = false;
+        timer = new Timer(200, rechargeLaser);
     }
 
     /**
@@ -72,10 +86,12 @@ public class Player extends GameObject {
      * If canFire, fire a laser.
      */
     public void fire() {
-        if (game.laser == null) {
+         if(!isRecharging){
             int laserX = x + (width - Laser.WIDTH) / 2;
             int laserY = y - Laser.HEIGHT;
             game.addLaser(new Laser(laserX, laserY, game));
+            isRecharging = true;
+            timer.start();
         }
     }
 

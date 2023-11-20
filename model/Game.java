@@ -50,6 +50,10 @@ public class Game implements GameControl, GameInfoProvider {
     /** The object to represent a laser shot by the player. */
     protected Laser laser;
 
+    /** The container object to represent lasers shot by the player. */
+
+    protected List<Laser> lasersList;
+
     /** The list of the invaders. */
     protected List<Invader> invadersList;
 
@@ -90,6 +94,7 @@ public class Game implements GameControl, GameInfoProvider {
         missilesList = new LinkedList<Missile>();
         explosionsList = new LinkedList<Explosion>();
         observers = new LinkedList<GameObserver>();
+        lasersList = new LinkedList<Laser>();
 
         tick = 0;
         paused = false;
@@ -244,10 +249,13 @@ public class Game implements GameControl, GameInfoProvider {
                 explosionIterator.remove();
         }
 
-        if (laser != null) {
-            laser.update();
+        Iterator<Laser> laserIterator = lasersList.iterator();
+        while (laserIterator.hasNext()) {
+            Laser laser = laserIterator.next();
+            if (!laser.isDead())
+                laser.update();
             if (laser.isDead())
-                laser = null;
+                laserIterator.remove();
         }
 
         Iterator<Missile> missileIterator = missilesList.iterator();
@@ -351,7 +359,7 @@ public class Game implements GameControl, GameInfoProvider {
         for (Missile missile : missilesList)
             gameObjects.add(missile);
 
-        if (laser != null)
+        for (Laser laser: lasersList)
             gameObjects.add(laser);
 
         for (Explosion explosion : explosionsList)
@@ -375,10 +383,7 @@ public class Game implements GameControl, GameInfoProvider {
      * @param laser the laser to be added to the game
      */
     protected void addLaser(Laser laser) {
-        if (this.laser != null)
-            throw new RuntimeException("Cannot shoot a laser when one already exists.");
-
-        this.laser = laser;
+        lasersList.add(laser);
     }
 
     /**
