@@ -1,8 +1,8 @@
 package newview;
-/**
- * STUDENT: MOHAMMED ALHAIDARI (HAIDARI ALHAIDARI)
- * STUDENT ID: VRL968 / 11356223
- * COURSE: DR. JASON BOWEY / CMPT 270 T01
+/*
+  STUDENT: MOHAMMED ALHAIDARI (HAIDARI ALHAIDARI)
+  STUDENT ID: VRL968 / 11356223
+  COURSE: DR. JASON BOWEY / CMPT 270 T01
  */
 
 import java.awt.*;
@@ -13,7 +13,7 @@ import model.GameInfoProvider;
 
 
 public class EnergyLevel extends JFrame implements GameObserver {
-    private GameInfoProvider gameInfo;
+    private final GameInfoProvider gameInfo;
     private JLabel energyLabel;
     private JLabel damageLabel;
     private Timer damageTakenTimer;
