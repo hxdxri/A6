@@ -13,6 +13,7 @@
 
 package view;
 
+import newview.EnergyLevel;
 import java.awt.Component;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -126,6 +127,12 @@ public class View extends JFrame {
         // the game panel is to be informed when the game changes
         // so that it can show the new situation
         gameInfoProvider.addObserver(gamePanel);
+
+        EnergyLevel energylevel = new EnergyLevel(gameInfoProvider);
+        // the energy level window is to be informed when the game
+        // changes so that it can show the new situation
+        gameInfoProvider.addObserver(energylevel);
+
         overallPanel.setFocusComponent(gamePanel);
 
         displayPanel(overallPanel);

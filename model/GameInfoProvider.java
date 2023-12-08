@@ -35,5 +35,9 @@ public interface GameInfoProvider {
 
     public int getTick();
 
+    public int getEnergyLevel();
+
+    public boolean isLowPowerStatus();
+
     public void setInvaderSynchronizationObject(Object reference);
 }

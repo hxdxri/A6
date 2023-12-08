@@ -35,6 +35,7 @@ import model.GameObserver;
 import gameResults.GameResult;
 import gameResults.HighScores;
 
+
 /**
  * The class to start the space invaders game. It is also the controller in the
  * model-view-controller architecture of the system, i.e., when an event arrives, it takes

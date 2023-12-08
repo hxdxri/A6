@@ -19,10 +19,7 @@ import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.Dimension;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.BoxLayout;
-import javax.swing.Box;
+import javax.swing.*;
 
 /**
  * A panel to welcome a user and give the choice between playing a game and viewing the high scores

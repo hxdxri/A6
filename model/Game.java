@@ -464,4 +464,18 @@ public class Game implements GameControl, GameInfoProvider {
     public int getTick() {
         return tick;
     }
+
+    /**
+     *
+     * @return the energy level
+     */
+    @Override
+    public int getEnergyLevel() {
+        return player.energyLevel;
+    }
+
+    @Override
+    public boolean isLowPowerStatus() {
+        return player.lowPowerStatus;
+    }
 }
