@@ -21,7 +21,6 @@ import java.awt.event.ActionListener;
  * The player in the space invaders game.
  */
 public class Player extends GameObject {
-    private static long startTime;
     public static final int WIDTH = 46;
     public static final int HEIGHT = 25;
 
@@ -74,7 +73,6 @@ public class Player extends GameObject {
     public Player(int x, int y, Game game) {
 
         super(x, y, game, "player");
-        startTime = System.currentTimeMillis();
 
         width = WIDTH;
         height = HEIGHT;
