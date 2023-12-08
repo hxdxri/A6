@@ -79,13 +79,9 @@ public class Player extends GameObject {
         lives = INITIAL_NUM_LIVES;
         score = 0;
         ActionListener rechargeLaser = e -> isRecharging = false;
-        ActionListener rechargeTotalEnergyLevel = e -> {
-            lowPowerStatus = false;
-        };
+        ActionListener rechargeTotalEnergyLevel = e -> lowPowerStatus = false;
         ActionListener rechargeEnergyLevel = e -> {if(energyLevel < 5){energyLevel++;}};
-        ActionListener allowPlayerMovement = e -> {
-            canMove = true;
-        };
+        ActionListener allowPlayerMovement = e -> canMove = true;
 
         Player.rechargeLaser = new Timer(200, rechargeLaser);
         retotalEnergyLevel = new Timer(10000, rechargeTotalEnergyLevel);
